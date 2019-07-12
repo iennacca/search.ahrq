@@ -1,0 +1,631 @@
+{
+	"info": {
+		"_postman_id": "0fcdc9ea-278c-4f6e-baa0-58e9c64f39ff",
+		"name": "ahrqsearch.azure.com",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get index",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "api-key",
+						"type": "text",
+						"value": "{{api-key}}"
+					}
+				],
+				"url": {
+					"raw": "https://{{service}}.search.windows.net/indexes/{{index}}?api-version={{api-version}}",
+					"protocol": "https",
+					"host": [
+						"{{service}}",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"indexes",
+						"{{index}}"
+					],
+					"query": [
+						{
+							"key": "api-key",
+							"value": "7358958F638E4016123753A44C87982B",
+							"disabled": true
+						},
+						{
+							"key": "api-version",
+							"value": "{{api-version}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create index",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "api-key",
+						"value": "{{api-key}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"@odata.context\": \"https://ahrqsearch.search.windows.net/$metadata#indexes/$entity\",\n    \"@odata.etag\": \"\\\"0x8D6F3969BEE681D\\\"\",\n    \"name\": \"ahrqsearch-index\",\n    \"defaultScoringProfile\": \"\",\n    \"fields\": [\n        {\n            \"name\": \"content\",\n            \"type\": \"Edm.String\",\n            \"searchable\": true,\n            \"filterable\": false,\n            \"retrievable\": true,\n            \"sortable\": false,\n            \"facetable\": false,\n            \"key\": false,\n            \"indexAnalyzer\": null,\n            \"searchAnalyzer\": null,\n            \"analyzer\": \"standard.lucene\",\n            \"synonymMaps\": []\n        },\n        {\n            \"name\": \"metadata_storage_content_type\",\n            \"type\": \"Edm.String\",\n            \"searchable\": false,\n            \"filterable\": true,\n            \"retrievable\": false,\n            \"sortable\": true,\n            \"facetable\": true,\n            \"key\": false,\n            \"indexAnalyzer\": null,\n            \"searchAnalyzer\": null,\n            \"analyzer\": null,\n            \"synonymMaps\": []\n        },\n        {\n            \"name\": \"metadata_storage_size\",\n            \"type\": \"Edm.Int64\",\n            \"searchable\": false,\n            \"filterable\": true,\n            \"retrievable\": false,\n            \"sortable\": true,\n            \"facetable\": true,\n            \"key\": false,\n            \"indexAnalyzer\": null,\n            \"searchAnalyzer\": null,\n            \"analyzer\": null,\n            \"synonymMaps\": []\n        },\n        {\n            \"name\": \"metadata_storage_last_modified\",\n            \"type\": \"Edm.DateTimeOffset\",\n            \"searchable\": false,\n            \"filterable\": true,\n            \"retrievable\": false,\n            \"sortable\": true,\n            \"facetable\": true,\n            \"key\": false,\n            \"indexAnalyzer\": null,\n            \"searchAnalyzer\": null,\n            \"analyzer\": null,\n            \"synonymMaps\": []\n        },\n        {\n            \"name\": \"metadata_storage_name\",\n            \"type\": \"Edm.String\",\n            \"searchable\": true,\n            \"filterable\": true,\n            \"retrievable\": true,\n            \"sortable\": true,\n            \"facetable\": true,\n            \"key\": false,\n            \"indexAnalyzer\": null,\n            \"searchAnalyzer\": null,\n            \"analyzer\": \"standard.lucene\",\n            \"synonymMaps\": []\n        },\n        {\n            \"name\": \"metadata_storage_path\",\n            \"type\": \"Edm.String\",\n            \"searchable\": true,\n            \"filterable\": true,\n            \"retrievable\": true,\n            \"sortable\": true,\n            \"facetable\": true,\n            \"key\": true,\n            \"indexAnalyzer\": null,\n            \"searchAnalyzer\": null,\n            \"analyzer\": \"standard.lucene\",\n            \"synonymMaps\": []\n        },\n        {\n            \"name\": \"metadata_content_type\",\n            \"type\": \"Edm.String\",\n            \"searchable\": false,\n            \"filterable\": true,\n            \"retrievable\": false,\n            \"sortable\": true,\n            \"facetable\": true,\n            \"key\": false,\n            \"indexAnalyzer\": null,\n            \"searchAnalyzer\": null,\n            \"analyzer\": null,\n            \"synonymMaps\": []\n        },\n        {\n            \"name\": \"metadata_language\",\n            \"type\": \"Edm.String\",\n            \"searchable\": false,\n            \"filterable\": true,\n            \"retrievable\": false,\n            \"sortable\": true,\n            \"facetable\": true,\n            \"key\": false,\n            \"indexAnalyzer\": null,\n            \"searchAnalyzer\": null,\n            \"analyzer\": null,\n            \"synonymMaps\": []\n        },\n        {\n            \"name\": \"metadata_author\",\n            \"type\": \"Edm.String\",\n            \"searchable\": true,\n            \"filterable\": true,\n            \"retrievable\": true,\n            \"sortable\": true,\n            \"facetable\": true,\n            \"key\": false,\n            \"indexAnalyzer\": null,\n            \"searchAnalyzer\": null,\n            \"analyzer\": \"standard.lucene\",\n            \"synonymMaps\": []\n        },\n        {\n            \"name\": \"locations\",\n            \"type\": \"Collection(Edm.String)\",\n            \"searchable\": true,\n            \"filterable\": true,\n            \"retrievable\": true,\n            \"sortable\": false,\n            \"facetable\": true,\n            \"key\": false,\n            \"indexAnalyzer\": null,\n            \"searchAnalyzer\": null,\n            \"analyzer\": null,\n            \"synonymMaps\": []\n        },\n        {\n            \"name\": \"people\",\n            \"type\": \"Collection(Edm.String)\",\n            \"searchable\": true,\n            \"filterable\": true,\n            \"retrievable\": true,\n            \"sortable\": false,\n            \"facetable\": true,\n            \"key\": false,\n            \"indexAnalyzer\": null,\n            \"searchAnalyzer\": null,\n            \"analyzer\": null,\n            \"synonymMaps\": []\n        },\n        {\n            \"name\": \"organizations\",\n            \"type\": \"Collection(Edm.String)\",\n            \"searchable\": true,\n            \"filterable\": true,\n            \"retrievable\": true,\n            \"sortable\": false,\n            \"facetable\": true,\n            \"key\": false,\n            \"indexAnalyzer\": null,\n            \"searchAnalyzer\": null,\n            \"analyzer\": null,\n            \"synonymMaps\": []\n        },\n        {\n            \"name\": \"language\",\n            \"type\": \"Edm.String\",\n            \"searchable\": true,\n            \"filterable\": true,\n            \"retrievable\": true,\n            \"sortable\": false,\n            \"facetable\": true,\n            \"key\": false,\n            \"indexAnalyzer\": null,\n            \"searchAnalyzer\": null,\n            \"analyzer\": null,\n            \"synonymMaps\": []\n        },\n        {\n            \"name\": \"keyphrases\",\n            \"type\": \"Collection(Edm.String)\",\n            \"searchable\": true,\n            \"filterable\": true,\n            \"retrievable\": true,\n            \"sortable\": false,\n            \"facetable\": true,\n            \"key\": false,\n            \"indexAnalyzer\": null,\n            \"searchAnalyzer\": null,\n            \"analyzer\": null,\n            \"synonymMaps\": []\n        }\n    ],\n    \"scoringProfiles\": [],\n    \"corsOptions\": null,\n    \"suggesters\": [],\n    \"analyzers\": [],\n    \"tokenizers\": [],\n    \"tokenFilters\": [],\n    \"charFilters\": []\n}"
+				},
+				"url": {
+					"raw": "https://{{service}}.search.windows.net/indexes?api-version={{api-version}} ",
+					"protocol": "https",
+					"host": [
+						"{{service}}",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"indexes"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "{{api-version}} "
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get indexer",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "api-key",
+						"value": "{{api-key}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{service}}.search.windows.net/indexers/{{indexer}}?api-version={{api-version}}",
+					"protocol": "https",
+					"host": [
+						"{{service}}",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"indexers",
+						"{{indexer}}"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "{{api-version}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create indexer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "api-key",
+						"value": "{{api-key}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"@odata.context\": \"https://ahrqsearch.search.windows.net/$metadata#indexers/$entity\",\n    \"@odata.etag\": \"\\\"0x8D6F3988A73ACAE\\\"\",\n    \"name\": \"ahrqsearch-indexer\",\n    \"description\": null,\n    \"dataSourceName\": \"ahrqsearch\",\n    \"skillsetName\": \"ahrqsearch-skillset\",\n    \"targetIndexName\": \"ahrqsearch-index\",\n    \"disabled\": null,\n    \"schedule\": {\n        \"interval\": \"P1D\",\n        \"startTime\": \"0001-01-01T00:00:00Z\"\n    },\n    \"parameters\": {\n        \"batchSize\": null,\n        \"maxFailedItems\": null,\n        \"maxFailedItemsPerBatch\": null,\n        \"base64EncodeKeys\": false,\n        \"configuration\": {\n            \"dataToExtract\": \"contentAndMetadata\"\n        }\n    },\n    \"fieldMappings\": [\n        {\n            \"sourceFieldName\": \"metadata_storage_path\",\n            \"targetFieldName\": \"metadata_storage_path\",\n            \"mappingFunction\": {\n                \"name\": \"base64Encode\",\n                \"parameters\": null\n            }\n        }\n    ],\n    \"outputFieldMappings\": [\n        {\n            \"sourceFieldName\": \"/document/content/locations\",\n            \"targetFieldName\": \"locations\",\n            \"mappingFunction\": null\n        },\n        {\n            \"sourceFieldName\": \"/document/content/people\",\n            \"targetFieldName\": \"people\",\n            \"mappingFunction\": null\n        },\n        {\n            \"sourceFieldName\": \"/document/content/organizations\",\n            \"targetFieldName\": \"organizations\",\n            \"mappingFunction\": null\n        },\n        {\n            \"sourceFieldName\": \"/document/language\",\n            \"targetFieldName\": \"language\",\n            \"mappingFunction\": null\n        },\n        {\n            \"sourceFieldName\": \"/document/content/keyphrases\",\n            \"targetFieldName\": \"keyphrases\",\n            \"mappingFunction\": null\n        }\n    ]\n}"
+				},
+				"url": {
+					"raw": "https://{{service}}.search.windows.net/indexers?api-version={{api-version}}",
+					"protocol": "https",
+					"host": [
+						"{{service}}",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"indexers"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "{{api-version}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get skillset",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "api-key",
+						"value": "{{api-key}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://{{service}}.search.windows.net/skillsets/{{skillset}}?api-version={{api-version}}",
+					"protocol": "https",
+					"host": [
+						"{{service}}",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"skillsets",
+						"{{skillset}}"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "{{api-version}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create skillset",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "api-key",
+						"value": "{{api-key}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"@odata.context\": \"https://ahrqsearch.search.windows.net/$metadata#skillsets/$entity\",\n    \"@odata.etag\": \"\\\"0x8D6F3969CAF2793\\\"\",\n    \"name\": \"ahrqsearch-skillset\",\n    \"description\": \"basic skillset\",\n    \"skills\": [\n        {\n            \"@odata.type\": \"#Microsoft.Skills.Text.EntityRecognitionSkill\",\n            \"name\": \"#1\",\n            \"description\": null,\n            \"context\": \"/document/content\",\n            \"categories\": [\n                \"Person\",\n                \"Quantity\",\n                \"Organization\",\n                \"URL\",\n                \"Email\",\n                \"Location\",\n                \"DateTime\"\n            ],\n            \"defaultLanguageCode\": \"en\",\n            \"minimumPrecision\": null,\n            \"includeTypelessEntities\": null,\n            \"inputs\": [\n                {\n                    \"name\": \"text\",\n                    \"source\": \"/document/content\",\n                    \"sourceContext\": null,\n                    \"inputs\": []\n                },\n                {\n                    \"name\": \"languageCode\",\n                    \"source\": \"/document/language\",\n                    \"sourceContext\": null,\n                    \"inputs\": []\n                }\n            ],\n            \"outputs\": [\n                {\n                    \"name\": \"locations\",\n                    \"targetName\": \"locations\"\n                },\n                {\n                    \"name\": \"persons\",\n                    \"targetName\": \"people\"\n                },\n                {\n                    \"name\": \"organizations\",\n                    \"targetName\": \"organizations\"\n                },\n                {\n                    \"name\": \"entities\",\n                    \"targetName\": \"entities\"\n                }\n            ]\n        },\n        {\n            \"@odata.type\": \"#Microsoft.Skills.Text.LanguageDetectionSkill\",\n            \"name\": \"#2\",\n            \"description\": null,\n            \"context\": \"/document\",\n            \"inputs\": [\n                {\n                    \"name\": \"text\",\n                    \"source\": \"/document/content\",\n                    \"sourceContext\": null,\n                    \"inputs\": []\n                }\n            ],\n            \"outputs\": [\n                {\n                    \"name\": \"languageCode\",\n                    \"targetName\": \"language\"\n                }\n            ]\n        },\n        {\n            \"@odata.type\": \"#Microsoft.Skills.Text.KeyPhraseExtractionSkill\",\n            \"name\": \"#3\",\n            \"description\": null,\n            \"context\": \"/document/content\",\n            \"defaultLanguageCode\": \"en\",\n            \"maxKeyPhraseCount\": null,\n            \"inputs\": [\n                {\n                    \"name\": \"text\",\n                    \"source\": \"/document/content\",\n                    \"sourceContext\": null,\n                    \"inputs\": []\n                },\n                {\n                    \"name\": \"languageCode\",\n                    \"source\": \"/document/language\",\n                    \"sourceContext\": null,\n                    \"inputs\": []\n                }\n            ],\n            \"outputs\": [\n                {\n                    \"name\": \"keyPhrases\",\n                    \"targetName\": \"keyphrases\"\n                }\n            ]\n        }\n    ],\n    \"cognitiveServices\": {\n        \"@odata.type\": \"#Microsoft.Azure.Search.CognitiveServicesByKey\",\n        \"description\": \"/subscriptions/f05dce71-00bc-4c64-b715-235c4c6abb81/resourceGroups/ahrqsearch/providers/Microsoft.CognitiveServices/accounts/ahrqsearch\",\n        \"key\": \"0ff980899cfb47f08928b6e94201dfd2\"\n    }\n}"
+				},
+				"url": {
+					"raw": "https://{{service}}.search.windows.net/skillsets/?api-version={{api-version}}",
+					"protocol": "https",
+					"host": [
+						"{{service}}",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"skillsets",
+						""
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "{{api-version}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get synonym map",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "api-key",
+						"type": "text",
+						"value": "{{api-key}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://{{service}}.search.windows.net/synonymmaps/{{synonym-map}}?api-version={{api-version}}",
+					"protocol": "https",
+					"host": [
+						"{{service}}",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"synonymmaps",
+						"{{synonym-map}}"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "{{api-version}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create synonym map",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "api-key",
+						"value": "{{api-key}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"format\":\"solr\",\n   \"synonyms\": \"\n      USA, United States, United States of America, America\\n\n      UK, United Kingdom, Britain, Great Britain\\n\n      UAE, United Arab Emirates, Emirates\\n\n   \"\n}"
+				},
+				"url": {
+					"raw": "https://{{service}}.search.windows.net/synonymmaps/{{synonym-map}}?api-version={{api-version}}",
+					"protocol": "https",
+					"host": [
+						"{{service}}",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"synonymmaps",
+						"{{synonym-map}}"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "{{api-version}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search facet (author)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "api-key",
+						"value": "{{api-key}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"search\": \"*\",\n  \"filter\": \"search.ismatch('Owens','metadata_author')\",\n  \"count\": true\n}"
+				},
+				"url": {
+					"raw": "https://{{service}}.search.windows.net/indexes/{{index}}/docs/search?api-version={{api-version}}",
+					"protocol": "https",
+					"host": [
+						"{{service}}",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"indexes",
+						"{{index}}",
+						"docs",
+						"search"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "{{api-version}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search facet (keyphrases)",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "api-key",
+						"type": "text",
+						"value": "{{api-key}}"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"search\": \"*\",\n  \"filter\": \"search.ismatch('Rockville','keyphrases')\",\n  \"count\": true\n}"
+				},
+				"url": {
+					"raw": "https://{{service}}.search.windows.net/indexes/{{index}}/docs/search?api-version={{api-version}}",
+					"protocol": "https",
+					"host": [
+						"{{service}}",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"indexes",
+						"{{index}}",
+						"docs",
+						"search"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "{{api-version}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search suggestions",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "api-key",
+						"value": "{{api-key}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"suggesterName\": \"sg\",\n    \"search\": \"San\",\n    \"top\": 100\n}"
+				},
+				"url": {
+					"raw": "https://{{service}}.search.windows.net/indexes/{{index}}/docs/suggest?api-version={{api-version}}",
+					"protocol": "https",
+					"host": [
+						"{{service}}",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"indexes",
+						"{{index}}",
+						"docs",
+						"suggest"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "{{api-version}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search AutoComplete",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "api-key",
+						"value": "{{api-key}}",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"suggesterName\": \"sg\",\n    \"search\": \"San\",\n    \"autocompleteMode\": \"twoTerms\",\n    \"top\": 100\n}"
+				},
+				"url": {
+					"raw": "https://{{service}}.search.windows.net/indexes/{{index}}/docs/autocomplete?api-version={{api-version}}",
+					"protocol": "https",
+					"host": [
+						"{{service}}",
+						"search",
+						"windows",
+						"net"
+					],
+					"path": [
+						"indexes",
+						"{{index}}",
+						"docs",
+						"autocomplete"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "{{api-version}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Azure Custom Function Copy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\n   \"values\": [\n\n        {\n\n            \"recordId\": \"a1\",\n\n            \"data\":\n\n            {\n\n               \"text\":  \"\\nAwesome hotel with HUGE BEAUTIFUL rooms \\n\\nThe City Hotel, London, UK \\n\\n10/3/2018 \\n\\nThis was a fantastic hotel! Very near a tube stop and the Tower of London. There are plenty of places \\n\\nto eat nearby as well. We stayed in a basement room that was great, very quiet and quite large. \\n\\nHotel had a very cool look and was very clean. The hotel only complaint I had was on the shower (it is \\n\\nseparate from a huge tub). Water hotel leaked out onto the bathroom floor so we ended using the bath \\n\\nmat as a water dam to prevent the leakage. The bed sheet was also not really wide enough for the \\n\\nbed but we managed. The free internet was a welcome surprise since many hotels charge ridiculous \\n\\nfees for it. \\n\\nReviewer: Vanessa Sargent hotel \\n\\n\\n\"\n\n            }\n\n        },\n\n        {\n\n            \"recordId\": \"a2\",\n\n            \"data\":\n\n            {\n\n               \"text\":  \"\\nAwesome hotel with HUGE BEAUTIFUL rooms \\n\\nThe City Hotel, London, UK \\n\\n10/3/2018 \\n\\nThis was a fantastic hotel! Very near a tube stop and the Tower of London. There are plenty of places \\n\\nto eat nearby as well. We stayed in a basement room that was great, very quiet and quite large. \\n\\nHotel had a very cool look and was very clean. The hotel only complaint I had was on the shower (it is \\n\\nseparate from a huge tub). Water hotel leaked out onto the bathroom floor so we ended using the bath \\n\\nmat as a water dam to prevent the leakage. The bed sheet was also not really wide enough for the \\n\\nbed but we managed. The free internet was a welcome surprise since many hotels charge ridiculous \\n\\nfees for it. \\n\\nReviewer: Vanessa Sargent hotel \\n\\n\\n\"\n\n            }\n\n        }\n\n   ]\n\n}"
+				},
+				"url": {
+					"raw": "https://openhackchallenge5.azurewebsites.net/api/c5WordCounter?code=Q4BW/iUuMSEMMPk2SO3zchGagO0FwvDe5bCQxrDZlFeWc3nrPqzlrw==",
+					"protocol": "https",
+					"host": [
+						"openhackchallenge5",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"c5WordCounter"
+					],
+					"query": [
+						{
+							"key": "code",
+							"value": "Q4BW/iUuMSEMMPk2SO3zchGagO0FwvDe5bCQxrDZlFeWc3nrPqzlrw=="
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "b74a8adc-85ad-4bcb-ad34-4801aa10d3e0",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "844c5093-8c59-4f0e-bc7e-6070a3b5aef2",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "ec2b98af-77a0-4f4b-a167-e7af6f9cb617",
+			"key": "api-version",
+			"value": "2019-05-06",
+			"type": "string"
+		},
+		{
+			"id": "f231b883-32bf-4554-8f66-b6cfa7f3bc52",
+			"key": "datasource",
+			"value": "ahrqsearch",
+			"type": "string"
+		},
+		{
+			"id": "b2c5f1f5-81ee-4d7c-b95c-fea6e8ab9c1a",
+			"key": "service",
+			"value": "ahrqsearch",
+			"type": "string"
+		},
+		{
+			"id": "14d3fa69-e694-4fa2-99fd-a35349cc4abb",
+			"key": "index",
+			"value": "ahrqsearch-index",
+			"type": "string"
+		},
+		{
+			"id": "b9fbb40c-0b7f-42ed-becd-8b385ad2d4c6",
+			"key": "indexer",
+			"value": "ahrqsearch-indexer",
+			"type": "string"
+		},
+		{
+			"id": "8f8b53f3-9c61-49c1-9fdd-79a2191854a1",
+			"key": "skillset",
+			"value": "ahrqsearch-skillset",
+			"type": "string"
+		},
+		{
+			"id": "a05c40b6-abe2-4fa6-98fd-f18d5023a980",
+			"key": "synonym-map",
+			"value": "ahrqsearch-synonymmap",
+			"type": "string"
+		},
+		{
+			"id": "a1ac93d2-8500-4592-8987-5ad34dccc29d",
+			"key": "api-key",
+			"value": "755013F321124FD6787325BF9AB7FDA4",
+			"type": "string"
+		}
+	]
+}
